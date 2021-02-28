@@ -1,121 +1,141 @@
-import { Table, Button, Space } from 'antd';
-import {App} from './../App.js'
+import Highlighter from "react-highlight-words";
+import { Table, Button, Space, Input } from 'antd';
 import React from 'react';
+import { SearchOutlined } from '@ant-design/icons';
 
-
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Red',
-    age: 32,
-    address: 'London No. 2 Lake Park',
-  },
-];
-class Tolon extends React.Component {
+class ListTable extends React.Component {
   state = {
     filteredInfo: null,
     sortedInfo: null,
+    searchText: '',
+    searchedColumn: '',
+  };
+  
+
+  handleSearch = (selectedKeys, confirm, dataIndex) => {
+    confirm();
+    this.setState({
+      searchText: selectedKeys[0],
+      searchedColumn: dataIndex,
+    });
   };
 
+  handleReset = clearFilters => {
+    clearFilters();
+    this.setState({ searchText: '' });
+  };
+// 
   handleChange = (pagination, filters, sorter) => {
     console.log('Various parameters', pagination, filters, sorter);
     this.setState({
       filteredInfo: filters,
       sortedInfo: sorter,
+      selectedRowKeys: [],
+      loading: false,
     });
   };
 
-  clearFilters = () => {
-    this.setState({ filteredInfo: null });
+  start = () => {
+    this.setState({ loading: true });
+    setTimeout(() => {
+      this.setState({
+        selectedRowKeys: [],
+        loading: false,
+      });
+    }, 1000);
   };
 
-  clearAll = () => {
-    this.setState({
-      filteredInfo: null,
-      sortedInfo: null,
-    });
+  onSelectChange = selectedRowKeys => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    this.setState({ selectedRowKeys });
   };
 
-  setAgeSort = () => {
-    this.setState({
-      sortedInfo: {
-        order: 'descend',
-        columnKey: 'age',
-      },
-    });
-  };
 
   render() {
-    let { sortedInfo, filteredInfo } = this.state;
+    let { sortedInfo, filteredInfo, selectedRowKeys } = this.state;
     sortedInfo = sortedInfo || {};
     filteredInfo = filteredInfo || {};
+    const rowSelection = {
+      selectedRowKeys,
+      onChange: this.onSelectChange,
+    };
     const columns = [
       {
-        title: 'Name',
-        dataIndex: 'name',
-        key: 'name',
+        title: 'Division',
+        dataIndex: 'division',
+        key: 'division',
         filters: [
           { text: 'Joe', value: 'Joe' },
           { text: 'Jim', value: 'Jim' },
         ],
-        filteredValue: filteredInfo.name || null,
-        onFilter: (value, record) => record.name.includes(value),
-        sorter: (a, b) => a.name.length - b.name.length,
-        sortOrder: sortedInfo.columnKey === 'name' && sortedInfo.order,
+        filteredValue: filteredInfo.division || null,
+        onFilter: (value, record) => record.division.includes(value),
+        sorter: (a, b) => a.division.length - b.division.length,
+        sortOrder: sortedInfo.columnKey === 'division' && sortedInfo.order,
         ellipsis: true,
       },
       {
-        title: 'Age',
-        dataIndex: 'age',
-        key: 'age',
-        sorter: (a, b) => a.age - b.age,
-        sortOrder: sortedInfo.columnKey === 'age' && sortedInfo.order,
-        ellipsis: true,
-      },
-      {
-        title: 'Address',
-        dataIndex: 'address',
-        key: 'address',
+        title: 'Division superior',
+        dataIndex: 'divisionSuperior',
+        key: 'divisionSuperior',
         filters: [
-          { text: 'London', value: 'London' },
+          { text: 'Producto', value: 'Producto' },
           { text: 'New York', value: 'New York' },
         ],
-        filteredValue: filteredInfo.address || null,
-        onFilter: (value, record) => record.address.includes(value),
-        sorter: (a, b) => a.address.length - b.address.length,
-        sortOrder: sortedInfo.columnKey === 'address' && sortedInfo.order,
+        filteredValue: filteredInfo.divisionSuperior || null,
+        onFilter: (value, record) => record.divisionSuperior.includes(value),
+        sorter: (a, b) => a.divisionSuperior.length - b.divisionSuperior.length,
+        sortOrder: sortedInfo.columnKey === 'divisionSuperior' && sortedInfo.order,
         ellipsis: true,
+      },
+      {
+        title: 'Colaboradores',
+        dataIndex: 'colaboradores',
+        key: 'colaboradores',
+        sorter: (a, b) => a.colaboradores - b.colaboradores,
+        sortOrder: sortedInfo.columnKey === 'colaboradores' && sortedInfo.order,
+        ellipsis: true,
+      },
+      {
+        title: 'Nivel',
+        dataIndex: 'nivel',
+        key: 'nivel',
+        filters: [
+          { text: 'Joe', value: 'Joe' },
+          { text: 'Jim', value: 'Jim' },
+        ],
+        filteredValue: filteredInfo.nivel || null,
+        onFilter: (value, record) => record.nivel.includes(value),
+        sorter: (a, b) => a.nivel - b.nivel,
+        sortOrder: sortedInfo.columnKey === 'nivel' && sortedInfo.order,
+        ellipsis: true,
+      },
+      {
+        title: 'Subdivisiones',
+        dataIndex: 'subdivisiones',
+        key: 'subdivisiones',
+        filters: [
+          { text: 'Joe', value: 'Joe' },
+          { text: 'Jim', value: 'Jim' },
+        ],
+        filteredValue: filteredInfo.subdivisiones || null,
+        onFilter: (value, record) => record.subdivisiones.includes(value),
+        sorter: (a, b) => a.subdivisiones - b.subdivisiones,
+        sortOrder: sortedInfo.columnKey === 'subdivisiones' && sortedInfo.order,
+        ellipsis: true,
+      },
+      {
+        title: 'Embajadores',
+        dataIndex: 'embajadores',
+        key: 'embajadores',
       },
     ];
     return (
       <>
-        <Space style={{ marginBottom: 16 }}>
-          <Button onClick={this.setAgeSort}>Sort age</Button>
-          <Button onClick={this.clearFilters}>Clear filters</Button>
-          <Button onClick={this.clearAll}>Clear filters and sorters</Button>
-        </Space>
-        <Table columns={columns} dataSource={data} onChange={this.handleChange} />
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} onChange={this.handleChange} />
       </>
     );
   }
 }
 
-export default Tolon
+export default ListTable

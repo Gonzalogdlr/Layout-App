@@ -1,16 +1,30 @@
-import { Layout, Breadcrumb, Button } from 'antd';
+import { Layout, Breadcrumb, Button, Menu, Dropdown, Input} from 'antd';
 import './stylesheets/aplication.css'
 import  Options  from './components/Options.js'
 import Usuario from './components/User.js'
-import { DownloadOutlined, UploadOutlined, PlusOutlined } from "@ant-design/icons";
+import { DownOutlined,DownloadOutlined, UploadOutlined, PlusOutlined } from "@ant-design/icons";
 import './stylesheets/header.css'
 import { Typography } from 'antd';
-import Tolon from './components/Table.js'
+import ListTable from './components/Table.js'
+
 
 const { Title } = Typography;
 const { Header, Content } = Layout;
-
-
+const { Search } = Input;
+const menu = (
+  <Menu>
+    <Menu.Item key="1" >
+      Columna 1
+    </Menu.Item>
+    <Menu.Item key="2" >
+      Columna 2
+    </Menu.Item>
+    <Menu.Item key="3" >
+      Columna 3
+    </Menu.Item>
+  </Menu>
+);
+const onSearch = value => console.log(value);
 function App() {
   return (
     <Layout>
@@ -37,7 +51,17 @@ function App() {
          </div>
        </div>
       <div className="site-layout-content">
-      <Tolon />
+      <div>
+      <Button>Listado</Button>
+      <Button>Árbol</Button>
+      </div>
+      <Dropdown overlay={menu}>
+        <Button >
+          Columnas <DownOutlined />
+        </Button>
+      </Dropdown>
+      <Search placeholder="Buscar" allowClear onSearch={onSearch} style={{ width: 200 }} />
+      <ListTable />
       </div>
       </Content>
     </Layout>
