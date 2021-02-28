@@ -1,7 +1,6 @@
-import Highlighter from "react-highlight-words";
-import { Table, Button, Space, Input } from 'antd';
+import { Table} from 'antd';
 import React from 'react';
-import { SearchOutlined } from '@ant-design/icons';
+import STORE from '../Store.js'
 
 class ListTable extends React.Component {
   state = {
@@ -132,7 +131,7 @@ class ListTable extends React.Component {
     ];
     return (
       <>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={data} onChange={this.handleChange} />
+        <Table rowSelection={rowSelection} columns={columns} dataSource={STORE} onChange={this.handleChange} />
       </>
     );
   }

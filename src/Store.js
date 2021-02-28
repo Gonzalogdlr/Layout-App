@@ -44,5 +44,50 @@ const STORE = [
     subdivisiones: 3,
     embajadores: "Jhose Portillo"
   },
+  {
+    key: '6',
+    division: 'Operaciones',
+    divisionSuperior: 'Producto',
+    colaboradores: 1,
+    nivel: 2,
+    subdivisiones: 3,
+    embajadores: "Juan Miguel"
+  },
+  {
+    key: '7',
+    division: 'Operaciones',
+    divisionSuperior: 'Producto',
+    colaboradores: 10,
+    nivel: 4,
+    subdivisiones: 3,
+    embajadores: "Jhose Portillo"
+  },
+  {
+    key: '8',
+    division: 'Operaciones',
+    divisionSuperior: 'Producto',
+    colaboradores: 10,
+    nivel: 4,
+    subdivisiones: 3,
+    embajadores: "Jhose Portillo"
+  },
+  {
+    key: '9',
+    division: 'Operaciones',
+    divisionSuperior: 'Producto',
+    colaboradores: 10,
+    nivel: 4,
+    subdivisiones: 3,
+    embajadores: "Jhose Portillo"
+  },
+  {
+    key: '10',
+    division: 'Operaciones',
+    divisionSuperior: 'Producto',
+    colaboradores: 10,
+    nivel: 4,
+    subdivisiones: 3,
+    embajadores: "Jhose Portillo"
+  },
 ];
 export default STORE;
