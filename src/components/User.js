@@ -22,14 +22,15 @@ const menu = (
 export const User = () => {
   return (
     <>
-      <div>
       <ShoppingFilled className="anticon-white"/>
+      <QuestionCircleFilled  className="anticon-white"/>
+      <div>
+      <BellFilled className="anticon-white"/>
       <Badge count={5} size="small">
-        <a href="Count" className="head-example" />
+        <a href="Count" className="head-example">
+        </a>
       </Badge>
       </div>
-      <QuestionCircleFilled  className="anticon-white"/>
-      <BellFilled className="anticon-white"/>
       <Avatar style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}>
         U
       </Avatar>
@@ -38,7 +39,7 @@ export const User = () => {
           Administrador <DownOutlined />
         </Button>
       </Dropdown>
-      <Title style={{ color: "black", backgroundColor: "white" }} level={3}>
+      <Title style={{ color: "white" }} level={3}>
         mandü
       </Title>
     </>
