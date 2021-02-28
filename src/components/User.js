@@ -1,5 +1,5 @@
 import { ShoppingFilled, QuestionCircleFilled, BellFilled, DownOutlined } from "@ant-design/icons";
-import { Dropdown, Avatar, Button } from 'antd';
+import { Dropdown, Avatar, Button, Badge } from 'antd';
 import { Typography } from 'antd';
 import { Menu } from "antd";
 
@@ -22,7 +22,12 @@ const menu = (
 export const User = () => {
   return (
     <>
+      <div>
       <ShoppingFilled className="anticon-white"/>
+      <Badge count={5} size="small">
+        <a href="Count" className="head-example" />
+      </Badge>
+      </div>
       <QuestionCircleFilled  className="anticon-white"/>
       <BellFilled className="anticon-white"/>
       <Avatar style={{ color: "#f56a00", backgroundColor: "#fde3cf" }}>
@@ -33,7 +38,7 @@ export const User = () => {
           Administrador <DownOutlined />
         </Button>
       </Dropdown>
-      <Title style={{ color: "white" }} level={5}>
+      <Title style={{ color: "black", backgroundColor: "white" }} level={3}>
         mandü
       </Title>
     </>

@@ -20,7 +20,7 @@ const menu = (
 export const Options = () => {
   return (
     <>
-      <Title style={{ color: "white" }} level={5}>
+      <Title style={{ color: "white" }} level={3}>
         mandü
       </Title>
       <Button className="ant-btn-options">Dashboard</Button>
