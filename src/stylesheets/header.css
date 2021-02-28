@@ -8,12 +8,4 @@
   color: white;
   font-size: 20px;
 }
-.site-layout-content {
-  min-height: 280px;
-  padding: 24px;
-  background: #fff;
-}
-.site-layout-top-content{
-  display: flex;
-  justify-content: space-between;
-}
+

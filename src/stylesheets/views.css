@@ -1,0 +1,18 @@
+.views{
+  padding-top: 19px;
+  padding-left: 25px;
+}
+.site-layout-top-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.selected{
+  border-bottom:solid 1px #1890ff;
+}
+.ant-breadcrumb a{
+  color:   #A6A6A6
+}
+.ant-breadcrumb > span:last-child a {
+  color: #1890ff
+}

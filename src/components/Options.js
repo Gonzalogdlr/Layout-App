@@ -1,8 +1,7 @@
-import { UserOutlined, DownOutlined } from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Menu } from "antd";
 import "./../stylesheets/aplication.css";
 import { Typography } from "antd";
-import "./../stylesheets/example.css"
 
 const { Title } = Typography;
 const menu = (
