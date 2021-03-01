@@ -13,7 +13,7 @@ const menu = (
 );
 export const Options = () => {
   return (
-    <div className="grid-options">
+    <div className="head-options">
       <img src={logoMandu} alt="logoMandu" />
       <Button className="ant-btn-options">
         Dashboard

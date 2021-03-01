@@ -17,7 +17,7 @@ const menu = (
 );
 export const User = () => {
   return (
-    <div className="grid-user">
+    <div className="head-user">
       <div className="group-icon">
         <ShoppingFilled className="anticon-white" />
         <QuestionCircleFilled className="anticon-white" />
