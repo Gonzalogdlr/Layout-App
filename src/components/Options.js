@@ -4,11 +4,18 @@ import "./../stylesheets/aplication.css";
 import "./../stylesheets/header.css";
 import logoMandu from "../assets/logoBlanco.svg";
 
-const menu = (
+const menuSeguimiento = (
   <Menu>
-    <Menu.Item key="1">1st menu item</Menu.Item>
-    <Menu.Item key="2">2nd menu item</Menu.Item>
-    <Menu.Item key="3">3rd menu item</Menu.Item>
+    <Menu.Item key="1">Seguimiento 1</Menu.Item>
+    <Menu.Item key="2">Seguimiento 2</Menu.Item>
+    <Menu.Item key="3">Seguimiento 3</Menu.Item>
+  </Menu>
+);
+const menuModelos = (
+  <Menu>
+    <Menu.Item key="1">Modelos 1</Menu.Item>
+    <Menu.Item key="2">Modelos 2</Menu.Item>
+    <Menu.Item key="3">Modelos 3</Menu.Item>
   </Menu>
 );
 export const Options = () => {
@@ -21,12 +28,12 @@ export const Options = () => {
       <Button className="ant-btn-options">
         Organización
       </Button>
-      <Dropdown overlay={menu}>
+      <Dropdown overlay={menuModelos}>
         <Button className="ant-btn-options">
           Modelos <DownOutlined />
         </Button>
       </Dropdown>
-      <Dropdown overlay={menu}>
+      <Dropdown overlay={menuSeguimiento}>
         <Button className="ant-btn-options">
           Seguimiento <DownOutlined />
         </Button>

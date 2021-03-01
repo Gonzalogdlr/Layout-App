@@ -8,11 +8,11 @@ import { Dropdown, Avatar, Button, Badge } from "antd";
 import { Menu } from "antd";
 import logoMandu from '../assets/logoNegro.svg'; 
 
-const menu = (
+const menuUsuario = (
   <Menu>
-    <Menu.Item key="1">1st menu item</Menu.Item>
-    <Menu.Item key="2">2nd menu item</Menu.Item>
-    <Menu.Item key="3">3rd menu item</Menu.Item>
+    <Menu.Item key="1">Perfil</Menu.Item>
+    <Menu.Item key="2">Opciones</Menu.Item>
+    <Menu.Item key="3">Cerrar Sesion</Menu.Item>
   </Menu>
 );
 export const User = () => {
@@ -32,7 +32,7 @@ export const User = () => {
       <Avatar style={{ color: "white", backgroundColor: "#fde3cf" }}>
         A
       </Avatar>
-      <Dropdown overlay={menu}>
+      <Dropdown overlay={menuUsuario}>
         <Button className="ant-btn-options">
           Administrador <DownOutlined />
         </Button>
