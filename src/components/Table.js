@@ -3,6 +3,15 @@ import React, { useState } from "react";
 import STORE from "../Store";
 import { PlusCircleFilled } from "@ant-design/icons";
 
+function totalColaboradores(){
+  let total = 0
+  STORE.forEach(e => {
+    total += parseInt(e.colaboradores)
+  })
+  return (<span>
+    Total colaboradores: {total}
+  </span>)
+}
 function ListTable() {
   const [state, setState] = useState({
     filteredInfo: null,
@@ -135,6 +144,7 @@ function ListTable() {
         dataSource={STORE}
         onChange={FiltersChange}
       />
+      {totalColaboradores()}
     </>
   );
 }
