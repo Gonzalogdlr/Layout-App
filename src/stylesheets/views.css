@@ -16,3 +16,9 @@
 .ant-breadcrumb > span:last-child a {
   color: #1890ff
 }
+.group-button-icon{
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  margin-right: 50px;
+}

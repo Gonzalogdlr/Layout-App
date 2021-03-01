@@ -1,17 +1,17 @@
 import { Layout } from "antd";
-import "./stylesheets/aplication.css";
 import Options from "./components/Options.js";
 import Usuario from "./components/User.js";
 import Views from "./components/Views.js";
-import Principal from "./components/Principal.js"
-import "./stylesheets/header.css"
+import Principal from "./components/Principal.js";
+import "./stylesheets/header.css";
+import "./stylesheets/aplication.css";
 
 const { Header, Content } = Layout;
 
 function App() {
   return (
     <Layout>
-      <Header>
+      <Header className="head">
         <Options />
         <Usuario />
       </Header>

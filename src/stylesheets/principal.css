@@ -1,0 +1,12 @@
+.columns-button{
+  display:flex;
+  justify-content: space-between ;
+  align-items: center; 
+  color: #a6a6a6;
+  width: 200px;
+}
+.site-layout-content-head{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
