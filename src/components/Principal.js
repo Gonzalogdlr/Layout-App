@@ -1,7 +1,7 @@
 import { Button, Dropdown, Menu, Input, Radio } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import ListTable from "./Table.js";
-import '../stylesheets/principal.css'
+import "./../stylesheets/principal.css"
 const { Search } = Input;
 const menu = (
   <Menu>
@@ -13,7 +13,7 @@ const menu = (
 export const Principal = () => {
   return (
     <div className="site-layout-content">
-      <div className=".site-layout-content-head">
+      <div className="site-layout-content-head">
         <div>
           <Radio.Group value="listado">
             <Radio.Button value="listado">Listado</Radio.Button>

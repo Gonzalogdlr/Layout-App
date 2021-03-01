@@ -1,6 +1,7 @@
 import { Table } from "antd";
 import React, { useState } from "react";
 import STORE from "../Store";
+import { PlusCircleFilled } from "@ant-design/icons";
 
 function ListTable() {
   const [state, setState] = useState({
@@ -101,6 +102,7 @@ function ListTable() {
       title: "Subdivisiones",
       dataIndex: "subdivisiones",
       key: "subdivisiones",
+      render: btns => <div className="table-columns-subdivisiones"> <p>{btns}</p><PlusCircleFilled style={{color: '#49C5A9', marginLeft: '10px'}}/></div>,
       filters: [
         { text: '1', value: '1' },
         { text: '2', value: '2' },

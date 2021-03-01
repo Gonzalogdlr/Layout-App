@@ -10,3 +10,7 @@
   justify-content: space-between;
   margin-bottom: 30px;
 }
+.table-columns-subdivisiones{
+  display: flex;
+  align-items: center;
+}
